@@ -644,6 +644,7 @@ st.markdown(
     .stTabs [data-baseweb="tab-list"] {
         gap: 12px;
         background: transparent;
+        border-bottom: none !important;
     }
     .stTabs [data-baseweb="tab"] {
         background: #18181b;
@@ -651,10 +652,17 @@ st.markdown(
         border-radius: 16px;
         color: #fca5a5;
         padding: 10px 18px;
+        box-shadow: none !important;
     }
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%) !important;
         color: #ffffff !important;
+    }
+    .stTabs [data-baseweb="tab-highlight"] {
+        display: none !important;
+    }
+    .stTabs [data-testid="stTabs"] div[role="tablist"] {
+        border-bottom: none !important;
     }
     </style>
     """,
