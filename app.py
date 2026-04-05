@@ -373,10 +373,10 @@ def render_score_bar(label: str, value: float, color: str) -> None:
         f"""
         <div style="margin-bottom:14px;">
             <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-                <span style="font-weight:700; color:#153a5b;">{label}</span>
-                <span style="color:#486070;">{value:.2f}%</span>
+                <span style="font-weight:700; color:#ffffff;">{label}</span>
+                <span style="color:#d4d4d8;">{value:.2f}%</span>
             </div>
-            <div style="height:12px; background:#e8f0f5; border-radius:999px; overflow:hidden;">
+            <div style="height:12px; background:#2a2a32; border-radius:999px; overflow:hidden;">
                 <div style="width:{min(value, 100):.2f}%; height:12px; background:{color}; border-radius:999px;"></div>
             </div>
         </div>
@@ -398,120 +398,31 @@ st.markdown(
     [data-testid="collapsedControl"] {display:none;}
     .hero {
         background:
-            radial-gradient(circle at 18% 18%, rgba(255,255,255,0.10), transparent 18%),
-            radial-gradient(circle at 80% 22%, rgba(239, 68, 68, 0.20), transparent 20%),
-            linear-gradient(135deg, #060607 0%, #141417 38%, #3f0d0d 68%, #b91c1c 100%);
+            radial-gradient(circle at 22% 22%, rgba(255,255,255,0.10), transparent 20%),
+            radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 18%),
+            linear-gradient(135deg, #09090b 0%, #4a0d0d 52%, #b91c1c 100%);
         border-radius: 34px;
-        padding: 42px;
+        padding: 38px;
         color: white;
-        box-shadow: 0 28px 70px rgba(127, 29, 29, 0.32);
+        box-shadow: 0 28px 70px rgba(127, 29, 29, 0.28);
         margin-bottom: 24px;
         border: 1px solid rgba(255,255,255,0.08);
     }
     .hero h1 {
-        margin: 0 0 10px 0;
-        font-size: 3rem;
+        margin: 0 0 8px 0;
+        font-size: 2.7rem;
         font-weight: 800;
-        line-height: 1.05;
     }
     .hero p {
         margin: 0;
         opacity: 0.95;
-        font-size: 1.04rem;
-        line-height: 1.7;
+        font-size: 1.03rem;
     }
     .hero-grid {
         display: grid;
-        grid-template-columns: 1.45fr 0.95fr;
+        grid-template-columns: 1.7fr 1fr;
         gap: 18px;
         align-items: center;
-    }
-    .eyebrow {
-        display: inline-block;
-        margin-bottom: 14px;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.09);
-        border: 1px solid rgba(255,255,255,0.12);
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #fecaca;
-    }
-    .hero-subgrid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 22px;
-    }
-    .hero-tile {
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 22px;
-        padding: 16px 18px;
-        backdrop-filter: blur(8px);
-    }
-    .hero-tile-label {
-        color: #fecaca;
-        font-size: 0.84rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-    }
-    .hero-tile-value {
-        color: #ffffff;
-        font-size: 1.55rem;
-        font-weight: 800;
-        margin-top: 6px;
-    }
-    .hero-tile-copy {
-        color: rgba(255,255,255,0.82);
-        font-size: 0.9rem;
-        margin-top: 6px;
-        line-height: 1.5;
-    }
-    .hero-panel {
-        background:
-            linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 30px;
-        padding: 24px;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .hero-panel h3 {
-        margin: 10px 0 8px 0;
-        font-size: 1.7rem;
-        color: #ffffff;
-    }
-    .hero-panel p {
-        color: rgba(255,255,255,0.85);
-        font-size: 0.96rem;
-    }
-    .hero-rail {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
-    }
-    .hero-rail-item {
-        background: rgba(9, 9, 11, 0.42);
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 18px;
-        padding: 14px 16px;
-    }
-    .hero-rail-item strong {
-        display: block;
-        color: #ffffff;
-        margin-bottom: 4px;
-    }
-    .hero-rail-item span {
-        color: rgba(255,255,255,0.76);
-        font-size: 0.9rem;
-        line-height: 1.5;
     }
     .info-card {
         background: rgba(22, 22, 26, 0.92);
@@ -560,81 +471,6 @@ st.markdown(
         margin: 4px 0 0 0;
         color: #d4d4d8;
         font-size: 0.95rem;
-    }
-    .overview-shell {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 18px;
-        margin: 18px 0 28px 0;
-    }
-    .overview-card {
-        background: rgba(20,20,24,0.92);
-        border-radius: 30px;
-        padding: 28px;
-        border: 1px solid rgba(239, 68, 68, 0.12);
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
-    }
-    .overview-card h2 {
-        margin: 0 0 10px 0;
-        color: #ffffff;
-        font-size: 2rem;
-    }
-    .overview-card p {
-        margin: 0;
-        color: #d4d4d8;
-        line-height: 1.7;
-    }
-    .overview-band {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-    }
-    .overview-pill {
-        background: #1f1012;
-        color: #fca5a5;
-        border: 1px solid rgba(239, 68, 68, 0.15);
-        border-radius: 999px;
-        padding: 9px 14px;
-        font-size: 0.9rem;
-    }
-    .overview-highlight {
-        background:
-            radial-gradient(circle at top right, rgba(239, 68, 68, 0.14), transparent 24%),
-            linear-gradient(180deg, rgba(17,17,20,0.95) 0%, rgba(24,24,28,0.95) 100%);
-        border-radius: 30px;
-        padding: 28px;
-        border: 1px solid rgba(239, 68, 68, 0.14);
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
-    }
-    .overview-highlight h4 {
-        margin: 0 0 10px 0;
-        color: #ffffff;
-        font-size: 1.2rem;
-    }
-    .overview-highlight p {
-        margin: 0;
-        color: #d4d4d8;
-        line-height: 1.6;
-    }
-    .overview-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
-    }
-    .overview-list-item {
-        border-left: 3px solid rgba(239, 68, 68, 0.55);
-        padding-left: 14px;
-    }
-    .overview-list-item strong {
-        display: block;
-        color: #ffffff;
-        margin-bottom: 4px;
-    }
-    .overview-list-item span {
-        color: #d4d4d8;
-        font-size: 0.94rem;
-        line-height: 1.5;
     }
     .feature-pill {
         display: inline-block;
@@ -830,37 +666,22 @@ st.markdown(
     <div class="hero">
         <div class="hero-grid">
             <div>
-                <div class="eyebrow">Clinical Decision Interface</div>
-                <h1>Understand symptom patterns through a sharper, more product-like healthcare front page.</h1>
-                <p>Review observed symptoms, surface the most likely condition, and move through a cleaner experience that feels closer to an original medical web platform than a basic project screen.</p>
-                <div class="hero-subgrid">
-                    <div class="hero-tile">
-                        <div class="hero-tile-label">Coverage</div>
-                        <div class="hero-tile-value">{len(encoder.classes_)}</div>
-                        <div class="hero-tile-copy">Modeled conditions spanning respiratory, infectious, digestive, chronic, and neurological groups.</div>
-                    </div>
-                    <div class="hero-tile">
-                        <div class="hero-tile-label">Signal Depth</div>
-                        <div class="hero-tile-value">{len(SYMPTOMS)}</div>
-                        <div class="hero-tile-copy">Symptoms designed to make disease patterns feel more specific and clinically structured.</div>
-                    </div>
+                <h1>Clinical Symptom Checker</h1>
+                <p>Review symptom patterns, surface the most likely condition, and explore a more original healthcare web experience designed to feel structured, informative, and visually polished.</p>
+                <div style="margin-top:18px;">
+                    <span class="feature-pill">{len(encoder.classes_)} diseases</span>
+                    <span class="feature-pill">{len(SYMPTOMS)} symptoms</span>
+                    <span class="feature-pill">{len(dataset)} structured cases</span>
+                    <span class="feature-pill">Prediction-focused interface</span>
                 </div>
             </div>
-            <div class="hero-panel">
-                <div>
-                    <div style="font-size:0.88rem; color:#fecaca; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">System Focus</div>
-                    <h3>Prediction, explanation, and presentation in one flow.</h3>
-                    <p>The opening screen now leads with a stronger visual story, clearer health-tech framing, and a more refined transition into prediction, insights, and project context.</p>
-                </div>
-                <div class="hero-rail">
-                    <div class="hero-rail-item">
-                        <strong>Prediction-first layout</strong>
-                        <span>Symptoms, result hierarchy, and ranked outputs are easier to scan from the first interaction.</span>
-                    </div>
-                    <div class="hero-rail-item">
-                        <strong>Website-style composition</strong>
-                        <span>The landing area now introduces the system before moving into the working sections below.</span>
-                    </div>
+            <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.14); border-radius:24px; padding:20px 22px;">
+                <div style="font-size:0.86rem; opacity:0.9; text-transform:uppercase; letter-spacing:0.06em;">System profile</div>
+                <div style="font-size:1.6rem; font-weight:800; margin-top:6px;">Condition intelligence view</div>
+                <div style="margin-top:10px; opacity:0.92; line-height:1.65;">Built around broader symptom coverage, clearer ranking output, and focused sections for prediction, insights, and project overview.</div>
+                <div style="margin-top:16px; display:grid; gap:10px;">
+                    <div style="padding:12px 14px; border-radius:18px; background:rgba(0,0,0,0.22); border:1px solid rgba(255,255,255,0.1);">Respiratory, cardiac, digestive, infectious, endocrine, and neurological conditions</div>
+                    <div style="padding:12px 14px; border-radius:18px; background:rgba(0,0,0,0.22); border:1px solid rgba(255,255,255,0.1);">Prediction page supported by separate insights and project context panels</div>
                 </div>
             </div>
         </div>
@@ -871,59 +692,48 @@ st.markdown(
 
 st.sidebar.empty()
 
+st.markdown('<div class="page-title">Overview</div>', unsafe_allow_html=True)
 st.markdown(
-    f"""
-    <div class="overview-shell">
-        <div class="overview-card">
-            <div class="page-title" style="margin-bottom:10px;">Front Page Overview</div>
-            <h2>Designed to feel more like a real digital health homepage.</h2>
-            <p>The opening section now introduces the platform before the working tabs begin. It gives the app a clearer identity, stronger visual hierarchy, and a more complete product-style first impression.</p>
-            <div class="overview-band">
-                <span class="overview-pill">{len(dataset)} generated patient cases</span>
-                <span class="overview-pill">{len(encoder.classes_)} condition classes</span>
-                <span class="overview-pill">{len(SYMPTOMS)} symptom inputs</span>
-                <span class="overview-pill">Red and black interface system</span>
-            </div>
-        </div>
-        <div class="overview-highlight">
-            <h4>What the first screen now communicates</h4>
-            <p>Instead of looking like a plain model runner, the landing area now positions the app as a structured healthcare experience with clearer intent and better visual confidence.</p>
-            <div class="overview-list">
-                <div class="overview-list-item">
-                    <strong>Stronger identity</strong>
-                    <span>The hero introduces the platform with a more defined health-tech tone.</span>
-                </div>
-                <div class="overview-list-item">
-                    <strong>Cleaner story flow</strong>
-                    <span>Users see what the system does before they move into prediction and supporting pages.</span>
-                </div>
-                <div class="overview-list-item">
-                    <strong>Better visual rhythm</strong>
-                    <span>Stat tiles, highlight panels, and tabs now feel more coordinated on the front page.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    """,
+    '<div class="page-copy">A structured symptom-based prediction website with broader disease coverage, richer symptom input, and separate pages for prediction, insights, and project context.</div>',
     unsafe_allow_html=True,
 )
 
 summary_col1, summary_col2, summary_col3 = st.columns(3)
 with summary_col1:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Structured Cases</p></div>',
+        f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Total Cases</p></div>',
         unsafe_allow_html=True,
     )
 with summary_col2:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Condition Library</p></div>',
+        f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Conditions Covered</p></div>',
         unsafe_allow_html=True,
     )
 with summary_col3:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Clinical Signals</p></div>',
+        f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Symptoms Available</p></div>',
         unsafe_allow_html=True,
     )
+
+st.markdown(
+    """
+    <div class="feature-grid">
+        <div class="feature-box">
+            <h4>Condition Coverage</h4>
+            <p>The system spans respiratory, cardiovascular, infectious, digestive, endocrine, dermatological, renal, and neurological disease groups to create a broader prediction space.</p>
+        </div>
+        <div class="feature-box">
+            <h4>Symptom Specificity</h4>
+            <p>Beyond common symptoms such as fever or fatigue, the app also models more discriminative signals like chest tightness, blood in urine, cough with mucus, neck stiffness, and rash blisters.</p>
+        </div>
+        <div class="feature-box">
+            <h4>Website Structure</h4>
+            <p>The front page leads into dedicated sections for prediction, technical insights, and project details so the interface feels closer to an original health platform.</p>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 tab_predict, tab_insights, tab_about = st.tabs(["Predict", "Insights", "About"])
 
@@ -952,8 +762,8 @@ with tab_predict:
         st.markdown(
             """
             <div class="glass-card">
-                <h3 style="margin-top:0; color:#12355b;">Selected Symptoms</h3>
-                <p style="color:#5c6b7a; margin-bottom:0;">Build the patient profile from this section and review the ranked disease response below.</p>
+                <h3 style="margin-top:0; color:#ffffff;">Selected Symptoms</h3>
+                <p style="color:#d4d4d8; margin-bottom:0;">Build the patient profile from this section and review the ranked disease response below.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1039,9 +849,9 @@ with tab_predict:
             st.markdown(
                 """
                 <div class="spotlight">
-                    <div style="font-size:0.9rem; color:#9a6700; font-weight:700;">Prediction Canvas</div>
-                    <div style="font-size:1.5rem; color:#7c4a03; font-weight:800; margin-top:6px;">Ready for symptom analysis</div>
-                    <div style="color:#8a6b2d; margin-top:8px;">Once you choose symptoms and press Predict Disease, this area will transform into the diagnostic result card with ranked conditions.</div>
+                    <div style="font-size:0.9rem; color:#fca5a5; font-weight:700;">Prediction Canvas</div>
+                    <div style="font-size:1.5rem; color:#ffffff; font-weight:800; margin-top:6px;">Ready for symptom analysis</div>
+                    <div style="color:#d4d4d8; margin-top:8px;">Once you choose symptoms and press Predict Disease, this area will transform into the diagnostic result card with ranked conditions.</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
@@ -1050,8 +860,8 @@ with tab_predict:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#12355b;">Case Builder Notes</h3>
-                <p style="color:#5c6b7a; margin-bottom:10px;">Use disease-specific symptoms to make the output look more realistic. Examples: chest tightness for respiratory disease, neck stiffness for meningitis, blood in urine for kidney or urinary disease.</p>
+                <h3 style="margin-top:0; color:#ffffff;">Case Builder Notes</h3>
+                <p style="color:#d4d4d8; margin-bottom:10px;">Use disease-specific symptoms to make the output look more realistic. Examples: chest tightness for respiratory disease, neck stiffness for meningitis, blood in urine for kidney or urinary disease.</p>
                 <div class="disease-cloud">
                     <span class="disease-chip">Chest Tightness</span>
                     <span class="disease-chip">Cough With Mucus</span>
@@ -1075,18 +885,18 @@ with tab_predict:
 with tab_insights:
     st.markdown(
         f"""
-        <div class="page-hero">
-            <div class="insight-banner">
-                <div style="font-size:0.92rem; opacity:0.92;">Insights Dashboard</div>
-                <div style="font-size:2rem; font-weight:800; margin-top:6px;">How this prediction system is structured</div>
-                <div style="margin-top:10px; max-width:760px; opacity:0.96;">This page explains the model, symptom coverage, and why the app now feels more like a finished web product.</div>
+            <div class="page-hero">
+                <div class="insight-banner">
+                    <div style="font-size:0.92rem; opacity:0.92;">Insights Dashboard</div>
+                    <div style="font-size:2rem; font-weight:800; margin-top:6px;">How this prediction system is structured</div>
+                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">This page explains the model, symptom coverage, and why the app now feels more like a finished web product.</div>
+                </div>
+                <div class="page-panel">
+                    <div style="font-size:0.86rem; color:#fca5a5; font-weight:700;">Snapshot</div>
+                    <div style="font-size:1.2rem; color:#ffffff; font-weight:800; margin-top:6px;">{metrics['accuracy'] * 100:.2f}% measured accuracy</div>
+                    <div style="color:#d4d4d8; margin-top:8px;">Measured on the generated dataset with broader symptom specificity and disease coverage.</div>
+                </div>
             </div>
-            <div class="page-panel">
-                <div style="font-size:0.86rem; color:#64748b; font-weight:700;">Snapshot</div>
-                <div style="font-size:1.2rem; color:#12355b; font-weight:800; margin-top:6px;">{metrics['accuracy'] * 100:.2f}% measured accuracy</div>
-                <div style="color:#617282; margin-top:8px;">Measured on the generated dataset with broader symptom specificity.</div>
-            </div>
-        </div>
         """,
         unsafe_allow_html=True,
     )
@@ -1114,7 +924,7 @@ with tab_insights:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#12355b;">How The Model Interprets Symptoms</h3>
+                <h3 style="margin-top:0; color:#ffffff;">How The Model Interprets Symptoms</h3>
                 <p class="section-note">Each selected symptom becomes a binary feature in the input vector. The classifier compares that pattern against thousands of simulated disease cases and estimates the nearest disease matches. Diseases with more distinct signatures, such as meningitis or appendicitis, often produce sharper score separation.</p>
             </div>
             """,
@@ -1124,7 +934,7 @@ with tab_insights:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#12355b;">Why More Specific Symptoms Matter</h3>
+                <h3 style="margin-top:0; color:#ffffff;">Why More Specific Symptoms Matter</h3>
                 <p class="section-note">Generic symptoms like fever and fatigue occur across many diseases, so they do not separate classes very well on their own. More specific symptoms such as neck stiffness, blood in urine, cough with mucus, chest tightness, and rash blisters help the model narrow the prediction more effectively.</p>
             </div>
             """,
@@ -1133,8 +943,8 @@ with tab_insights:
     st.markdown(
         """
         <div class="info-card">
-            <h3 style="margin-top:0; color:#12355b;">Interpretation Notes</h3>
-            <p class="section-note">The score shown in the prediction page is a model confidence estimate within the current environment, not a clinical certainty score. The app is designed to present classification workflow, symptom reasoning, and interface clarity rather than medical deployment.</p>
+            <h3 style="margin-top:0; color:#ffffff;">Interpretation Notes</h3>
+            <p class="section-note">The score shown in the prediction page is a model confidence estimate within the current environment, not a clinical certainty score. The platform is designed to present classification workflow, symptom reasoning, and healthcare interface quality rather than direct medical deployment.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -1143,18 +953,18 @@ with tab_insights:
 with tab_about:
     st.markdown(
         """
-        <div class="page-hero">
-            <div class="insight-banner">
-                <div style="font-size:0.92rem; opacity:0.92;">About The Project</div>
-                <div style="font-size:2rem; font-weight:800; margin-top:6px;">A classification-based disease prediction website</div>
-                <div style="margin-top:10px; max-width:760px; opacity:0.96;">This project combines machine learning with a modern healthcare-style frontend to create a disease prediction experience that is both technically meaningful and visually presentable.</div>
+            <div class="page-hero">
+                <div class="insight-banner">
+                    <div style="font-size:0.92rem; opacity:0.92;">About The Project</div>
+                    <div style="font-size:2rem; font-weight:800; margin-top:6px;">A classification-based disease prediction website</div>
+                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">This project combines machine learning with a modern healthcare-style frontend to create a disease prediction experience that is both technically meaningful and visually presentable.</div>
+                </div>
+                <div class="page-panel">
+                    <div style="font-size:0.86rem; color:#fca5a5; font-weight:700;">Project Positioning</div>
+                    <div style="font-size:1.2rem; color:#ffffff; font-weight:800; margin-top:6px;">Built as a polished healthcare web experience</div>
+                    <div style="color:#d4d4d8; margin-top:8px;">The goal is not only prediction, but also stronger presentation quality and a more complete website-like project feel.</div>
+                </div>
             </div>
-            <div class="page-panel">
-                <div style="font-size:0.86rem; color:#64748b; font-weight:700;">Project Positioning</div>
-                <div style="font-size:1.2rem; color:#12355b; font-weight:800; margin-top:6px;">Built as a polished healthcare web experience</div>
-                <div style="color:#617282; margin-top:8px;">The goal is not only prediction, but also stronger presentation quality and a more complete website-like project feel.</div>
-            </div>
-        </div>
         """,
         unsafe_allow_html=True,
     )
@@ -1182,7 +992,7 @@ with tab_about:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#12355b;">Project Value</h3>
+                <h3 style="margin-top:0; color:#ffffff;">Project Value</h3>
                 <p class="section-note">This project is useful because it brings together the machine learning pipeline and the front-end presentation layer in one application. It shows how symptom-driven classification can be paired with a more complete healthcare-style interface.</p>
             </div>
             """,
@@ -1192,7 +1002,7 @@ with tab_about:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#12355b;">Current Scope</h3>
+                <h3 style="margin-top:0; color:#ffffff;">Current Scope</h3>
                 <p class="section-note">The current version focuses on symptom-based disease ranking across a wide set of globally relevant conditions. It emphasizes readability, ranking clarity, and design quality rather than building a full patient record management system.</p>
             </div>
             """,
@@ -1201,7 +1011,7 @@ with tab_about:
     st.markdown(
         """
         <div class="info-card">
-            <h3 style="margin-top:0; color:#12355b;">Future Upgrade Roadmap</h3>
+            <h3 style="margin-top:0; color:#ffffff;">Future Upgrade Roadmap</h3>
             <div class="timeline">
                 <div class="timeline-item">
                     <h5>1. Real Dataset Integration</h5>
