@@ -666,8 +666,8 @@ st.markdown(
     <div class="hero">
         <div class="hero-grid">
             <div>
-                <h1>Clinical Symptom Checker</h1>
-                <p>Review symptom patterns, surface the most likely condition, and explore a more original healthcare web experience designed to feel structured, informative, and visually polished.</p>
+                <h1>MediScope Symptom Checker</h1>
+                <p>Review symptom patterns, surface the most likely condition, and move through a healthcare website designed to feel structured, informative, and visually polished.</p>
                 <div style="margin-top:18px;">
                     <span class="feature-pill">{len(encoder.classes_)} diseases</span>
                     <span class="feature-pill">{len(SYMPTOMS)} symptoms</span>
@@ -678,10 +678,10 @@ st.markdown(
             <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.14); border-radius:24px; padding:20px 22px;">
                 <div style="font-size:0.86rem; opacity:0.9; text-transform:uppercase; letter-spacing:0.06em;">System profile</div>
                 <div style="font-size:1.6rem; font-weight:800; margin-top:6px;">Condition intelligence view</div>
-                <div style="margin-top:10px; opacity:0.92; line-height:1.65;">Built around broader symptom coverage, clearer ranking output, and focused sections for prediction, insights, and project overview.</div>
+                <div style="margin-top:10px; opacity:0.92; line-height:1.65;">Built around broader symptom coverage, clearer ranking output, and focused pages for home, prediction, insights, and platform information.</div>
                 <div style="margin-top:16px; display:grid; gap:10px;">
                     <div style="padding:12px 14px; border-radius:18px; background:rgba(0,0,0,0.22); border:1px solid rgba(255,255,255,0.1);">Respiratory, cardiac, digestive, infectious, endocrine, and neurological conditions</div>
-                    <div style="padding:12px 14px; border-radius:18px; background:rgba(0,0,0,0.22); border:1px solid rgba(255,255,255,0.1);">Prediction page supported by separate insights and project context panels</div>
+                    <div style="padding:12px 14px; border-radius:18px; background:rgba(0,0,0,0.22); border:1px solid rgba(255,255,255,0.1);">Separate pages for prediction guidance, clinical insights, and platform information</div>
                 </div>
             </div>
         </div>
@@ -692,50 +692,51 @@ st.markdown(
 
 st.sidebar.empty()
 
-st.markdown('<div class="page-title">Overview</div>', unsafe_allow_html=True)
-st.markdown(
-    '<div class="page-copy">A structured symptom-based prediction website with broader disease coverage, richer symptom input, and separate pages for prediction, insights, and project context.</div>',
-    unsafe_allow_html=True,
-)
+tab_home, tab_predict, tab_insights, tab_about = st.tabs(["Home", "Prediction", "Insights", "About"])
 
-summary_col1, summary_col2, summary_col3 = st.columns(3)
-with summary_col1:
+with tab_home:
+    st.markdown('<div class="page-title">Overview</div>', unsafe_allow_html=True)
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Total Cases</p></div>',
-        unsafe_allow_html=True,
-    )
-with summary_col2:
-    st.markdown(
-        f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Conditions Covered</p></div>',
-        unsafe_allow_html=True,
-    )
-with summary_col3:
-    st.markdown(
-        f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Symptoms Available</p></div>',
+        '<div class="page-copy">A structured symptom-based healthcare website with broader disease coverage, richer symptom input, and dedicated pages for prediction, insights, and platform information.</div>',
         unsafe_allow_html=True,
     )
 
-st.markdown(
-    """
-    <div class="feature-grid">
-        <div class="feature-box">
-            <h4>Condition Coverage</h4>
-            <p>The system spans respiratory, cardiovascular, infectious, digestive, endocrine, dermatological, renal, and neurological disease groups to create a broader prediction space.</p>
-        </div>
-        <div class="feature-box">
-            <h4>Symptom Specificity</h4>
-            <p>Beyond common symptoms such as fever or fatigue, the app also models more discriminative signals like chest tightness, blood in urine, cough with mucus, neck stiffness, and rash blisters.</p>
-        </div>
-        <div class="feature-box">
-            <h4>Website Structure</h4>
-            <p>The front page leads into dedicated sections for prediction, technical insights, and project details so the interface feels closer to an original health platform.</p>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+    summary_col1, summary_col2, summary_col3 = st.columns(3)
+    with summary_col1:
+        st.markdown(
+            f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Total Cases</p></div>',
+            unsafe_allow_html=True,
+        )
+    with summary_col2:
+        st.markdown(
+            f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Conditions Covered</p></div>',
+            unsafe_allow_html=True,
+        )
+    with summary_col3:
+        st.markdown(
+            f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Symptoms Available</p></div>',
+            unsafe_allow_html=True,
+        )
 
-tab_predict, tab_insights, tab_about = st.tabs(["Predict", "Insights", "About"])
+    st.markdown(
+        """
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h4>Condition Coverage</h4>
+                <p>The platform spans respiratory, cardiovascular, infectious, digestive, endocrine, dermatological, renal, and neurological disease groups to create a broader prediction space.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Symptom Specificity</h4>
+                <p>Beyond common symptoms such as fever or fatigue, the system also models more discriminative signals like chest tightness, blood in urine, cough with mucus, neck stiffness, and rash blisters.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Website Structure</h4>
+                <p>The home page now leads into dedicated website pages for clinical prediction, model insights, and platform information with a cleaner flow.</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 with tab_predict:
     st.markdown(
@@ -887,9 +888,9 @@ with tab_insights:
         f"""
             <div class="page-hero">
                 <div class="insight-banner">
-                    <div style="font-size:0.92rem; opacity:0.92;">Insights Dashboard</div>
+                    <div style="font-size:0.92rem; opacity:0.92;">Clinical Insights</div>
                     <div style="font-size:2rem; font-weight:800; margin-top:6px;">How this prediction system is structured</div>
-                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">This page explains the model, symptom coverage, and why the app now feels more like a finished web product.</div>
+                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">This page explains the model, symptom coverage, and how the platform interprets symptom combinations across a broad condition library.</div>
                 </div>
                 <div class="page-panel">
                     <div style="font-size:0.86rem; color:#fca5a5; font-weight:700;">Snapshot</div>
@@ -944,7 +945,7 @@ with tab_insights:
         """
         <div class="info-card">
             <h3 style="margin-top:0; color:#ffffff;">Interpretation Notes</h3>
-            <p class="section-note">The score shown in the prediction page is a model confidence estimate within the current environment, not a clinical certainty score. The platform is designed to present classification workflow, symptom reasoning, and healthcare interface quality rather than direct medical deployment.</p>
+            <p class="section-note">The score shown in the prediction page is a model confidence estimate within the current environment, not a clinical certainty score. The platform is designed to present classification workflow, symptom reasoning, and healthcare interface quality in a clear and accessible format.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -955,14 +956,14 @@ with tab_about:
         """
             <div class="page-hero">
                 <div class="insight-banner">
-                    <div style="font-size:0.92rem; opacity:0.92;">About The Project</div>
-                    <div style="font-size:2rem; font-weight:800; margin-top:6px;">A classification-based disease prediction website</div>
-                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">This project combines machine learning with a modern healthcare-style frontend to create a disease prediction experience that is both technically meaningful and visually presentable.</div>
+                    <div style="font-size:0.92rem; opacity:0.92;">About MediScope</div>
+                    <div style="font-size:2rem; font-weight:800; margin-top:6px;">A classification-based disease prediction platform</div>
+                    <div style="margin-top:10px; max-width:760px; opacity:0.96;">MediScope combines machine learning with a modern healthcare-style interface to create a disease prediction experience that is structured, informative, and visually refined.</div>
                 </div>
                 <div class="page-panel">
-                    <div style="font-size:0.86rem; color:#fca5a5; font-weight:700;">Project Positioning</div>
+                    <div style="font-size:0.86rem; color:#fca5a5; font-weight:700;">Platform Positioning</div>
                     <div style="font-size:1.2rem; color:#ffffff; font-weight:800; margin-top:6px;">Built as a polished healthcare web experience</div>
-                    <div style="color:#d4d4d8; margin-top:8px;">The goal is not only prediction, but also stronger presentation quality and a more complete website-like project feel.</div>
+                    <div style="color:#d4d4d8; margin-top:8px;">The focus is not only prediction, but also a stronger website experience with cleaner information flow and richer symptom coverage.</div>
                 </div>
             </div>
         """,
@@ -972,11 +973,11 @@ with tab_about:
         """
         <div class="feature-grid">
             <div class="feature-box">
-                <h4>Project Goal</h4>
-                <p>Create a disease prediction application that looks polished, structured, and closer to a finished healthcare product.</p>
+                <h4>Clinical Focus</h4>
+                <p>Support symptom-based condition screening through a polished interface that feels like a real healthcare website.</p>
             </div>
             <div class="feature-box">
-                <h4>Machine Learning Core</h4>
+                <h4>Prediction Engine</h4>
                 <p>The app uses classification to map patient symptom patterns to the most likely disease classes and rank the top matches.</p>
             </div>
             <div class="feature-box">
@@ -992,8 +993,8 @@ with tab_about:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#ffffff;">Project Value</h3>
-                <p class="section-note">This project is useful because it brings together the machine learning pipeline and the front-end presentation layer in one application. It shows how symptom-driven classification can be paired with a more complete healthcare-style interface.</p>
+                <h3 style="margin-top:0; color:#ffffff;">Why MediScope</h3>
+                <p class="section-note">MediScope brings together a disease classification engine and a healthcare-style presentation layer in one platform. It is designed to make symptom-driven screening feel clearer, more structured, and easier to interpret.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1002,8 +1003,8 @@ with tab_about:
         st.markdown(
             """
             <div class="info-card">
-                <h3 style="margin-top:0; color:#ffffff;">Current Scope</h3>
-                <p class="section-note">The current version focuses on symptom-based disease ranking across a wide set of globally relevant conditions. It emphasizes readability, ranking clarity, and design quality rather than building a full patient record management system.</p>
+                <h3 style="margin-top:0; color:#ffffff;">Service Scope</h3>
+                <p class="section-note">The current experience focuses on symptom-based disease ranking across a wide set of globally relevant conditions. It emphasizes readability, ranking clarity, and page-level navigation rather than patient record management.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1011,19 +1012,19 @@ with tab_about:
     st.markdown(
         """
         <div class="info-card">
-            <h3 style="margin-top:0; color:#ffffff;">Future Upgrade Roadmap</h3>
+            <h3 style="margin-top:0; color:#ffffff;">Service Roadmap</h3>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h5>1. Real Dataset Integration</h5>
+                    <h5>1. Expanded Clinical Data</h5>
                     <p>Replace synthetic patterns with a real disease-symptom dataset or a curated CSV source for stronger realism.</p>
                 </div>
                 <div class="timeline-item">
-                    <h5>2. Clinical Report Generation</h5>
+                    <h5>2. Report Generation</h5>
                     <p>Add downloadable patient summary cards or PDF-style reports for stronger reporting and clinical-style presentation.</p>
                 </div>
                 <div class="timeline-item">
-                    <h5>3. Role-Based Views</h5>
-                    <p>Introduce patient, admin, or doctor-facing views if you want to grow this into a more complete healthcare product mockup.</p>
+                    <h5>3. Role-Based Experience</h5>
+                    <p>Introduce patient, admin, or doctor-facing views to expand the platform into a more complete digital health experience.</p>
                 </div>
             </div>
         </div>
