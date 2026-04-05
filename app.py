@@ -398,31 +398,120 @@ st.markdown(
     [data-testid="collapsedControl"] {display:none;}
     .hero {
         background:
-            radial-gradient(circle at 22% 22%, rgba(255,255,255,0.10), transparent 20%),
-            radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 18%),
-            linear-gradient(135deg, #09090b 0%, #4a0d0d 52%, #b91c1c 100%);
+            radial-gradient(circle at 18% 18%, rgba(255,255,255,0.10), transparent 18%),
+            radial-gradient(circle at 80% 22%, rgba(239, 68, 68, 0.20), transparent 20%),
+            linear-gradient(135deg, #060607 0%, #141417 38%, #3f0d0d 68%, #b91c1c 100%);
         border-radius: 34px;
-        padding: 38px;
+        padding: 42px;
         color: white;
-        box-shadow: 0 28px 70px rgba(127, 29, 29, 0.28);
+        box-shadow: 0 28px 70px rgba(127, 29, 29, 0.32);
         margin-bottom: 24px;
         border: 1px solid rgba(255,255,255,0.08);
     }
     .hero h1 {
-        margin: 0 0 8px 0;
-        font-size: 2.7rem;
+        margin: 0 0 10px 0;
+        font-size: 3rem;
         font-weight: 800;
+        line-height: 1.05;
     }
     .hero p {
         margin: 0;
         opacity: 0.95;
-        font-size: 1.03rem;
+        font-size: 1.04rem;
+        line-height: 1.7;
     }
     .hero-grid {
         display: grid;
-        grid-template-columns: 1.7fr 1fr;
+        grid-template-columns: 1.45fr 0.95fr;
         gap: 18px;
         align-items: center;
+    }
+    .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.09);
+        border: 1px solid rgba(255,255,255,0.12);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fecaca;
+    }
+    .hero-subgrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+    }
+    .hero-tile {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 16px 18px;
+        backdrop-filter: blur(8px);
+    }
+    .hero-tile-label {
+        color: #fecaca;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+    .hero-tile-value {
+        color: #ffffff;
+        font-size: 1.55rem;
+        font-weight: 800;
+        margin-top: 6px;
+    }
+    .hero-tile-copy {
+        color: rgba(255,255,255,0.82);
+        font-size: 0.9rem;
+        margin-top: 6px;
+        line-height: 1.5;
+    }
+    .hero-panel {
+        background:
+            linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 30px;
+        padding: 24px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .hero-panel h3 {
+        margin: 10px 0 8px 0;
+        font-size: 1.7rem;
+        color: #ffffff;
+    }
+    .hero-panel p {
+        color: rgba(255,255,255,0.85);
+        font-size: 0.96rem;
+    }
+    .hero-rail {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+    }
+    .hero-rail-item {
+        background: rgba(9, 9, 11, 0.42);
+        border: 1px solid rgba(255,255,255,0.09);
+        border-radius: 18px;
+        padding: 14px 16px;
+    }
+    .hero-rail-item strong {
+        display: block;
+        color: #ffffff;
+        margin-bottom: 4px;
+    }
+    .hero-rail-item span {
+        color: rgba(255,255,255,0.76);
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     .info-card {
         background: rgba(22, 22, 26, 0.92);
@@ -471,6 +560,81 @@ st.markdown(
         margin: 4px 0 0 0;
         color: #d4d4d8;
         font-size: 0.95rem;
+    }
+    .overview-shell {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        margin: 18px 0 28px 0;
+    }
+    .overview-card {
+        background: rgba(20,20,24,0.92);
+        border-radius: 30px;
+        padding: 28px;
+        border: 1px solid rgba(239, 68, 68, 0.12);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    }
+    .overview-card h2 {
+        margin: 0 0 10px 0;
+        color: #ffffff;
+        font-size: 2rem;
+    }
+    .overview-card p {
+        margin: 0;
+        color: #d4d4d8;
+        line-height: 1.7;
+    }
+    .overview-band {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+    }
+    .overview-pill {
+        background: #1f1012;
+        color: #fca5a5;
+        border: 1px solid rgba(239, 68, 68, 0.15);
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+    }
+    .overview-highlight {
+        background:
+            radial-gradient(circle at top right, rgba(239, 68, 68, 0.14), transparent 24%),
+            linear-gradient(180deg, rgba(17,17,20,0.95) 0%, rgba(24,24,28,0.95) 100%);
+        border-radius: 30px;
+        padding: 28px;
+        border: 1px solid rgba(239, 68, 68, 0.14);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    }
+    .overview-highlight h4 {
+        margin: 0 0 10px 0;
+        color: #ffffff;
+        font-size: 1.2rem;
+    }
+    .overview-highlight p {
+        margin: 0;
+        color: #d4d4d8;
+        line-height: 1.6;
+    }
+    .overview-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+    }
+    .overview-list-item {
+        border-left: 3px solid rgba(239, 68, 68, 0.55);
+        padding-left: 14px;
+    }
+    .overview-list-item strong {
+        display: block;
+        color: #ffffff;
+        margin-bottom: 4px;
+    }
+    .overview-list-item span {
+        color: #d4d4d8;
+        font-size: 0.94rem;
+        line-height: 1.5;
     }
     .feature-pill {
         display: inline-block;
@@ -666,19 +830,38 @@ st.markdown(
     <div class="hero">
         <div class="hero-grid">
             <div>
-                <h1>Clinical Symptom Checker</h1>
-                <p>Choose symptoms, review the most likely condition, and explore a refined healthcare interface designed for a polished product experience.</p>
-                <div style="margin-top:18px;">
-                    <span class="feature-pill">{len(encoder.classes_)} diseases</span>
-                    <span class="feature-pill">{len(SYMPTOMS)} symptoms</span>
-                    <span class="feature-pill">Fast prediction</span>
-                    <span class="feature-pill">Creative medical UI</span>
+                <div class="eyebrow">Clinical Decision Interface</div>
+                <h1>Understand symptom patterns through a sharper, more product-like healthcare front page.</h1>
+                <p>Review observed symptoms, surface the most likely condition, and move through a cleaner experience that feels closer to an original medical web platform than a basic project screen.</p>
+                <div class="hero-subgrid">
+                    <div class="hero-tile">
+                        <div class="hero-tile-label">Coverage</div>
+                        <div class="hero-tile-value">{len(encoder.classes_)}</div>
+                        <div class="hero-tile-copy">Modeled conditions spanning respiratory, infectious, digestive, chronic, and neurological groups.</div>
+                    </div>
+                    <div class="hero-tile">
+                        <div class="hero-tile-label">Signal Depth</div>
+                        <div class="hero-tile-value">{len(SYMPTOMS)}</div>
+                        <div class="hero-tile-copy">Symptoms designed to make disease patterns feel more specific and clinically structured.</div>
+                    </div>
                 </div>
             </div>
-            <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.14); border-radius:24px; padding:18px;">
-                <div style="font-size:0.9rem; opacity:0.9;">Experience mode</div>
-                <div style="font-size:1.6rem; font-weight:800; margin-top:6px;">Diagnostic Preview</div>
-                <div style="margin-top:8px; opacity:0.92;">Modern cards, visual hierarchy, and a more confident prediction journey.</div>
+            <div class="hero-panel">
+                <div>
+                    <div style="font-size:0.88rem; color:#fecaca; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">System Focus</div>
+                    <h3>Prediction, explanation, and presentation in one flow.</h3>
+                    <p>The opening screen now leads with a stronger visual story, clearer health-tech framing, and a more refined transition into prediction, insights, and project context.</p>
+                </div>
+                <div class="hero-rail">
+                    <div class="hero-rail-item">
+                        <strong>Prediction-first layout</strong>
+                        <span>Symptoms, result hierarchy, and ranked outputs are easier to scan from the first interaction.</span>
+                    </div>
+                    <div class="hero-rail-item">
+                        <strong>Website-style composition</strong>
+                        <span>The landing area now introduces the system before moving into the working sections below.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -688,26 +871,57 @@ st.markdown(
 
 st.sidebar.empty()
 
-st.markdown('<div class="page-title">Overview</div>', unsafe_allow_html=True)
 st.markdown(
-    '<div class="page-copy">A single flowing webpage with richer symptoms, globally important diseases, and a redesigned visual style.</div>',
+    f"""
+    <div class="overview-shell">
+        <div class="overview-card">
+            <div class="page-title" style="margin-bottom:10px;">Front Page Overview</div>
+            <h2>Designed to feel more like a real digital health homepage.</h2>
+            <p>The opening section now introduces the platform before the working tabs begin. It gives the app a clearer identity, stronger visual hierarchy, and a more complete product-style first impression.</p>
+            <div class="overview-band">
+                <span class="overview-pill">{len(dataset)} generated patient cases</span>
+                <span class="overview-pill">{len(encoder.classes_)} condition classes</span>
+                <span class="overview-pill">{len(SYMPTOMS)} symptom inputs</span>
+                <span class="overview-pill">Red and black interface system</span>
+            </div>
+        </div>
+        <div class="overview-highlight">
+            <h4>What the first screen now communicates</h4>
+            <p>Instead of looking like a plain model runner, the landing area now positions the app as a structured healthcare experience with clearer intent and better visual confidence.</p>
+            <div class="overview-list">
+                <div class="overview-list-item">
+                    <strong>Stronger identity</strong>
+                    <span>The hero introduces the platform with a more defined health-tech tone.</span>
+                </div>
+                <div class="overview-list-item">
+                    <strong>Cleaner story flow</strong>
+                    <span>Users see what the system does before they move into prediction and supporting pages.</span>
+                </div>
+                <div class="overview-list-item">
+                    <strong>Better visual rhythm</strong>
+                    <span>Stat tiles, highlight panels, and tabs now feel more coordinated on the front page.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
 
 summary_col1, summary_col2, summary_col3 = st.columns(3)
 with summary_col1:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Total Cases</p></div>',
+        f'<div class="mini-stat"><h3>{len(dataset)}</h3><p>Structured Cases</p></div>',
         unsafe_allow_html=True,
     )
 with summary_col2:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Conditions Covered</p></div>',
+        f'<div class="mini-stat"><h3>{len(encoder.classes_)}</h3><p>Condition Library</p></div>',
         unsafe_allow_html=True,
     )
 with summary_col3:
     st.markdown(
-        f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Symptoms Available</p></div>',
+        f'<div class="mini-stat"><h3>{len(SYMPTOMS)}</h3><p>Clinical Signals</p></div>',
         unsafe_allow_html=True,
     )
 
