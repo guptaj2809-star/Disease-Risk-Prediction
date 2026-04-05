@@ -721,11 +721,6 @@ with tab_predict:
                 <div class="page-title" style="margin-bottom:0;">Prediction Studio</div>
                 <div class="page-copy" style="margin-top:8px; margin-bottom:0;">Select symptoms directly on the page, then review the main match and the ranked score profile.</div>
             </div>
-            <div class="page-panel">
-                <div style="font-size:0.86rem; color:#64748b; font-weight:700;">On-page Controls</div>
-                <div style="font-size:1.1rem; color:#12355b; font-weight:800; margin-top:6px;">No sidebar symptom picker</div>
-                <div style="color:#617282; margin-top:8px;">Everything now happens in the main webpage for a cleaner and more app-like experience.</div>
-            </div>
         </div>
         """,
         unsafe_allow_html=True,
